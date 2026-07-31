@@ -1,0 +1,14 @@
+{
+  "name": "node-pm2-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple frontend application deployed with PM2",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

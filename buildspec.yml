@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - cd node-app
+      - npm install --production
+  build:
+    commands:
+      - echo Build completed successfully
+
+artifacts:
+  files:
+    - node-app/**
+    - appspec.yml
+    - scripts/**
+  discard-paths: no
