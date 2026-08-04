@@ -22,11 +22,11 @@ jobs:
 
         with:
           host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
+          username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           script: |
-            cd /home/ubuntu/<repo>
+            cd /home/ubuntu/pm2-application
 
             git pull origin main
 
