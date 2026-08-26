@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-APP_DIR="/home/ec2-user/node-app/node-app"
+APP_DIR="/home/ubuntu/node-app/node-app"
 mkdir -p "$APP_DIR"
 cd "$APP_DIR"
 
