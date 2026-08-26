@@ -3,40 +3,30 @@ set -euo pipefail
 
 APP_DIR="/home/ubuntu/node-app"
 
-echo "Loading Node.js environment..."
-
-export HOME="/home/ubuntu"
-export NVM_DIR="/home/ubuntu/.nvm"
-
-if [ -s "$NVM_DIR/nvm.sh" ]; then
-    source "$NVM_DIR/nvm.sh"
-else
-    echo "ERROR: NVM is not installed at $NVM_DIR"
-    exit 1
-fi
-
-nvm use --lts
-
-echo "Node version:"
+echo "Checking Node.js..."
 node -v
 
-echo "NPM version:"
+echo "Checking npm..."
 npm -v
 
 echo "Creating application directory..."
-
 mkdir -p "$APP_DIR"
 
 cd "$APP_DIR"
 
 if [ -f package.json ]; then
-    echo "Installing npm dependencies..."
+    echo "Installing application dependencies..."
     npm install --production
+else
+    echo "WARNING: package.json not found"
 fi
 
 if ! command -v pm2 >/dev/null 2>&1; then
     echo "Installing PM2..."
-    npm install -g pm2
+    sudo npm install -g pm2
 fi
+
+echo "PM2 version:"
+pm2 -v
 
 echo "Installation completed successfully."
