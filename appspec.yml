@@ -1,6 +1,11 @@
 version: 0.0
 
+files:
+  - source: /
+    destination: /home/ubuntu/node-app
+
 hooks:
+
   ApplicationStop:
     - location: scripts/stop.sh
       timeout: 300
