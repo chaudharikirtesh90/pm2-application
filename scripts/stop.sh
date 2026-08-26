@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-APP_DIR="/home/ec2-user/node-app"
+APP_DIR="/home/ubuntu/node-app"
 cd "$APP_DIR"
 
 if command -v pm2 >/dev/null 2>&1; then
